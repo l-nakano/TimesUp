@@ -8,24 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		AFB0CB7F26B1CB1F00F57E89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB0CB7E26B1CB1F00F57E89 /* AppDelegate.swift */; };
-		AFB0CB8126B1CB1F00F57E89 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = AFB0CB8026B1CB1F00F57E89 /* GameScene.sks */; };
 		AFB0CB8326B1CB1F00F57E89 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = AFB0CB8226B1CB1F00F57E89 /* Actions.sks */; };
-		AFB0CB8526B1CB1F00F57E89 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB0CB8426B1CB1F00F57E89 /* GameScene.swift */; };
-		AFB0CB8726B1CB1F00F57E89 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB0CB8626B1CB1F00F57E89 /* GameViewController.swift */; };
 		AFB0CB8A26B1CB1F00F57E89 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFB0CB8826B1CB1F00F57E89 /* Main.storyboard */; };
 		AFB0CB8C26B1CB2000F57E89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFB0CB8B26B1CB2000F57E89 /* Assets.xcassets */; };
+		AFB0CB9B26B1E1E800F57E89 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB0CB9A26B1E1E800F57E89 /* QuizViewController.swift */; };
+		AFB0CBA426B1F2CB00F57E89 /* AnswerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB0CBA326B1F2CB00F57E89 /* AnswerCollectionViewCell.swift */; };
+		AFB0CBA926B1F6E500F57E89 /* QuestionCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB0CBA826B1F6E500F57E89 /* QuestionCollectionReusableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AFB0CB7B26B1CB1F00F57E89 /* TimesUpQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimesUpQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFB0CB7E26B1CB1F00F57E89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AFB0CB8026B1CB1F00F57E89 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		AFB0CB8226B1CB1F00F57E89 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
-		AFB0CB8426B1CB1F00F57E89 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		AFB0CB8626B1CB1F00F57E89 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		AFB0CB8926B1CB1F00F57E89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AFB0CB8B26B1CB2000F57E89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AFB0CB8D26B1CB2000F57E89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFB0CB9A26B1E1E800F57E89 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		AFB0CBA326B1F2CB00F57E89 /* AnswerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerCollectionViewCell.swift; sourceTree = "<group>"; };
+		AFB0CBA826B1F6E500F57E89 /* QuestionCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCollectionReusableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +58,56 @@
 		AFB0CB7D26B1CB1F00F57E89 /* TimesUpQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				AFB0CB9326B1CED400F57E89 /* Models */,
+				AFB0CB9426B1CEDC00F57E89 /* Views */,
+				AFB0CB9526B1CEE200F57E89 /* Controllers */,
 				AFB0CB7E26B1CB1F00F57E89 /* AppDelegate.swift */,
-				AFB0CB8026B1CB1F00F57E89 /* GameScene.sks */,
 				AFB0CB8226B1CB1F00F57E89 /* Actions.sks */,
-				AFB0CB8426B1CB1F00F57E89 /* GameScene.swift */,
-				AFB0CB8626B1CB1F00F57E89 /* GameViewController.swift */,
 				AFB0CB8826B1CB1F00F57E89 /* Main.storyboard */,
 				AFB0CB8B26B1CB2000F57E89 /* Assets.xcassets */,
 				AFB0CB8D26B1CB2000F57E89 /* Info.plist */,
 			);
 			path = TimesUpQuiz;
+			sourceTree = "<group>";
+		};
+		AFB0CB9326B1CED400F57E89 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AFB0CB9426B1CEDC00F57E89 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AFB0CB9526B1CEE200F57E89 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AFB0CBA726B1F40200F57E89 /* CollectionViews */,
+				AFB0CBA626B1F3FA00F57E89 /* Views */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		AFB0CBA626B1F3FA00F57E89 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AFB0CB9A26B1E1E800F57E89 /* QuizViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AFB0CBA726B1F40200F57E89 /* CollectionViews */ = {
+			isa = PBXGroup;
+			children = (
+				AFB0CBA326B1F2CB00F57E89 /* AnswerCollectionViewCell.swift */,
+				AFB0CBA826B1F6E500F57E89 /* QuestionCollectionReusableView.swift */,
+			);
+			path = CollectionViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,7 +168,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFB0CB8A26B1CB1F00F57E89 /* Main.storyboard in Resources */,
-				AFB0CB8126B1CB1F00F57E89 /* GameScene.sks in Resources */,
 				AFB0CB8C26B1CB2000F57E89 /* Assets.xcassets in Resources */,
 				AFB0CB8326B1CB1F00F57E89 /* Actions.sks in Resources */,
 			);
@@ -141,8 +180,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFB0CB8526B1CB1F00F57E89 /* GameScene.swift in Sources */,
-				AFB0CB8726B1CB1F00F57E89 /* GameViewController.swift in Sources */,
+				AFB0CBA426B1F2CB00F57E89 /* AnswerCollectionViewCell.swift in Sources */,
+				AFB0CBA926B1F6E500F57E89 /* QuestionCollectionReusableView.swift in Sources */,
+				AFB0CB9B26B1E1E800F57E89 /* QuizViewController.swift in Sources */,
 				AFB0CB7F26B1CB1F00F57E89 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
