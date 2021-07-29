@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF80AABA26B31980005479EC /* QuizData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF80AAB926B31980005479EC /* QuizData.swift */; };
+		AF80AABC26B31EB6005479EC /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF80AABB26B31EB6005479EC /* GameManager.swift */; };
+		AF80AAC126B32C95005479EC /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF80AAC026B32C95005479EC /* UIViewExtensions.swift */; };
+		AF80AAC426B32CFA005479EC /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF80AAC326B32CFA005479EC /* Enums.swift */; };
 		AFB0CB7F26B1CB1F00F57E89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB0CB7E26B1CB1F00F57E89 /* AppDelegate.swift */; };
 		AFB0CB8326B1CB1F00F57E89 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = AFB0CB8226B1CB1F00F57E89 /* Actions.sks */; };
 		AFB0CB8A26B1CB1F00F57E89 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFB0CB8826B1CB1F00F57E89 /* Main.storyboard */; };
@@ -17,6 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF80AAB926B31980005479EC /* QuizData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizData.swift; sourceTree = "<group>"; };
+		AF80AABB26B31EB6005479EC /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
+		AF80AAC026B32C95005479EC /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		AF80AAC326B32CFA005479EC /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		AFB0CB7B26B1CB1F00F57E89 /* TimesUpQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimesUpQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFB0CB7E26B1CB1F00F57E89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFB0CB8226B1CB1F00F57E89 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -39,6 +47,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF80AABF26B32C87005479EC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AF80AAC026B32C95005479EC /* UIViewExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AF80AAC226B32CE1005479EC /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				AF80AAC326B32CFA005479EC /* Enums.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		AFB0CB7226B1CB1F00F57E89 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +82,8 @@
 		AFB0CB7D26B1CB1F00F57E89 /* TimesUpQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				AF80AAC226B32CE1005479EC /* Enums */,
+				AF80AABF26B32C87005479EC /* Extensions */,
 				AFB0CB9326B1CED400F57E89 /* Models */,
 				AFB0CB9426B1CEDC00F57E89 /* Views */,
 				AFB0CB9526B1CEE200F57E89 /* Controllers */,
@@ -73,6 +99,8 @@
 		AFB0CB9326B1CED400F57E89 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AF80AAB926B31980005479EC /* QuizData.swift */,
+				AF80AABB26B31EB6005479EC /* GameManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -181,8 +209,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFB0CBA426B1F2CB00F57E89 /* AnswerCollectionViewCell.swift in Sources */,
+				AF80AAC126B32C95005479EC /* UIViewExtensions.swift in Sources */,
+				AF80AABC26B31EB6005479EC /* GameManager.swift in Sources */,
 				AFB0CBA926B1F6E500F57E89 /* QuestionCollectionReusableView.swift in Sources */,
 				AFB0CB9B26B1E1E800F57E89 /* QuizViewController.swift in Sources */,
+				AF80AABA26B31980005479EC /* QuizData.swift in Sources */,
+				AF80AAC426B32CFA005479EC /* Enums.swift in Sources */,
 				AFB0CB7F26B1CB1F00F57E89 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

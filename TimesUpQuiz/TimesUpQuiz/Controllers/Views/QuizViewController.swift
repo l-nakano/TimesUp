@@ -7,6 +7,8 @@ class QuizViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     @IBOutlet weak var answerCollection: UICollectionView!
     
+    var testeCount = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,7 +26,7 @@ class QuizViewController: UIViewController, UICollectionViewDataSource, UICollec
 
         if let answerCell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseAnswerIdentifier, for: indexPath) as? AnswerCollectionViewCell {
             
-            answerCell.configure(text: "Resposta")
+            answerCell.configure(text: GameManager.shared.questionsList[testeCount].answersList[indexPath.item].answerText)
             cell = answerCell
         }
 
@@ -36,16 +38,37 @@ class QuizViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         if let questionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: reuseQuestionIdentifier, for: indexPath) as? QuestionCollectionReusableView {
             
-            questionHeader.configure(text: "Pergunta")
+            questionHeader.configure(text: GameManager.shared.questionsList[testeCount].question)
             header = questionHeader
+            header.frame.size = CGSize(width: collectionView.frame.width, height: collectionView.frame.width / 2.1)
         }
         
         return header
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if GameManager.shared.questionsList[testeCount].answersList[indexPath.item].isAnswer {
+            collectionView.cellForItem(at: indexPath)!.blink(.rightAnswer, finished: {
+                self.testeCount += 1
+                self.answerCollection.reloadData()
+            })
+        } else {
+            collectionView.cellForItem(at: indexPath)!.blink(.wrongAnswer, finished: {
+                self.testeCount += 1
+                self.answerCollection.reloadData()
+            })
+        }
+    }
+    
+    // Changing layout settings
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        return CGSize(width: collectionView.frame.width / 2.1, height: 115)
+
+        return CGSize(width: collectionView.frame.width / 2.1, height: collectionView.frame.width / 2.1)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: collectionView.frame.width / 3, left: 0, bottom: 0, right: 0)
     }
 
     /*

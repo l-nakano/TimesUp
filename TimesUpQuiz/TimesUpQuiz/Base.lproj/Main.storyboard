@@ -27,11 +27,11 @@
                                             <size key="itemSize" width="128" height="128"/>
                                             <size key="headerReferenceSize" width="50" height="50"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="Answer" id="Rde-BK-tEq" customClass="AnswerCollectionViewCell" customModule="TimesUpQuiz" customModuleProvider="target">
-                                                <rect key="frame" x="56" y="60" width="128" height="128.33333333333334"/>
+                                                <rect key="frame" x="56" y="50" width="128" height="128.33333333333334"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ypg-bw-RMg">
                                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128.33333333333334"/>
@@ -59,8 +59,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="50"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y4p-aa-cXU">
-                                                    <rect key="frame" x="99.333333333333329" y="14.999999999999998" width="41.333333333333329" height="20.333333333333329"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y4p-aa-cXU">
+                                                    <rect key="frame" x="6" y="0.0" width="228" height="50"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -69,6 +69,8 @@
                                             <constraints>
                                                 <constraint firstItem="y4p-aa-cXU" firstAttribute="centerX" secondItem="vW2-me-sWE" secondAttribute="centerX" id="IxS-LQ-aTh"/>
                                                 <constraint firstItem="y4p-aa-cXU" firstAttribute="centerY" secondItem="vW2-me-sWE" secondAttribute="centerY" id="MN2-rx-hBA"/>
+                                                <constraint firstItem="y4p-aa-cXU" firstAttribute="height" secondItem="vW2-me-sWE" secondAttribute="height" id="Mjr-im-nJM"/>
+                                                <constraint firstItem="y4p-aa-cXU" firstAttribute="width" secondItem="vW2-me-sWE" secondAttribute="width" multiplier="0.95" id="kqZ-2S-dDR"/>
                                             </constraints>
                                             <connections>
                                                 <outlet property="questionLabel" destination="y4p-aa-cXU" id="2zf-jt-BUu"/>
