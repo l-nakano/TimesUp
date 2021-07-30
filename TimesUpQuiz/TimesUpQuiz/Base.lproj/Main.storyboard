@@ -96,6 +96,7 @@
                                         </collectionReusableView>
                                     </collectionView>
                                 </subviews>
+                                <gestureRecognizers/>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
@@ -106,6 +107,11 @@
                             <constraint firstItem="Dkz-SZ-LMb" firstAttribute="width" secondItem="4qk-I5-YsI" secondAttribute="height" multiplier="120:383" id="SPw-ql-F7e"/>
                             <constraint firstItem="Dkz-SZ-LMb" firstAttribute="centerY" secondItem="4qk-I5-YsI" secondAttribute="centerY" id="tIT-ag-V1h"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="foZ-hF-0Z1" appends="YES" id="0fy-Pf-mW0"/>
+                            <outletCollection property="gestureRecognizers" destination="TWw-kN-QKK" appends="YES" id="MXq-ei-bO4"/>
+                            <outletCollection property="gestureRecognizers" destination="hL4-Qc-YbE" appends="YES" id="q2S-nZ-gOt"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="answerCollection" destination="x5J-rh-tpq" id="hw4-56-m6g"/>
@@ -115,6 +121,21 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="foZ-hF-0Z1" userLabel="Pass Gesture Recognizer">
+                    <connections>
+                        <action selector="handleSwipeLeft:" destination="BV1-FR-VrT" id="aY1-UM-yiR"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="TWw-kN-QKK" userLabel="Freeze Gesture Recognizer">
+                    <connections>
+                        <action selector="handleLongPress:" destination="BV1-FR-VrT" id="FZ4-XS-1QK"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="hL4-Qc-YbE" userLabel="Half Gesture Recognizer">
+                    <connections>
+                        <action selector="handleSwipeRight:" destination="BV1-FR-VrT" id="Rde-Uc-Ayh"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="130.40000000000001" y="113.79310344827587"/>
         </scene>

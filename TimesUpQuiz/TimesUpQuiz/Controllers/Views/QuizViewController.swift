@@ -102,6 +102,23 @@ class QuizViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
     }
     
+    // Gesture Recognizer
+    
+    @IBAction func handleSwipeLeft(_ gesture: UISwipeGestureRecognizer) {
+        gesture.direction = .left
+        print("Pula a questão")
+    }
+    
+    @IBAction func handleSwipeRight(_ gesture: UISwipeGestureRecognizer) {
+        gesture.direction = .right
+        print("Metade das alterativas")
+    }
+    
+    @IBAction func handleLongPress(_ gesture: UILongPressGestureRecognizer) {
+        gesture.minimumPressDuration = GameManager.shared.timeToFreezeTime
+        print("Congela tempo")
+    }
+    
     //
 
     /*

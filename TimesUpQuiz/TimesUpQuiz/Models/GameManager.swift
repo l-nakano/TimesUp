@@ -17,7 +17,8 @@ class GameManager {
                  answersList: [("Canguru", true), ("Coala", false), ("Diabo da Tasmânia", false), ("Equidna", false)])
     ]
     
-    let answersPerQuestion = 4
+    let answersPerQuestion = 4,
+        timeToFreezeTime = 0.5
     
     var timeLeft = 60,
         currentQuestionTime = 1,
