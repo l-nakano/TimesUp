@@ -1,3 +1,3 @@
-enum blinkMethod {
+enum AnswerMethod {
     case rightAnswer, wrongAnswer
 }

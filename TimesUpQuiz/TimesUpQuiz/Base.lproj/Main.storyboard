@@ -20,8 +20,27 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Dkz-SZ-LMb">
                                 <rect key="frame" x="75" y="78" width="240" height="698"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="De3-EW-iVX">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="20.333333333333332"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3E-nG-n5l">
+                                        <rect key="frame" x="0.0" y="30.333333333333329" width="240" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PK8-iR-aYW">
+                                        <rect key="frame" x="0.0" y="60.666666666666664" width="240" height="20.333333333333336"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="x5J-rh-tpq">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="698"/>
+                                        <rect key="frame" x="0.0" y="91" width="240" height="607"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TMd-y4-CsV">
                                             <size key="itemSize" width="128" height="128"/>
@@ -31,23 +50,22 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="Answer" id="Rde-BK-tEq" customClass="AnswerCollectionViewCell" customModule="TimesUpQuiz" customModuleProvider="target">
-                                                <rect key="frame" x="56" y="50" width="128" height="128.33333333333334"/>
+                                                <rect key="frame" x="56" y="50" width="128" height="128"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ypg-bw-RMg">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128.33333333333334"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gd6-vA-cu7">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gd6-vA-cu7">
                                                             <rect key="frame" x="43.333333333333329" y="54.000000000000007" width="41.333333333333329" height="20.333333333333336"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="gd6-vA-cu7" firstAttribute="centerY" secondItem="ypg-bw-RMg" secondAttribute="centerY" id="2rl-3i-yWx"/>
-                                                        <constraint firstItem="gd6-vA-cu7" firstAttribute="top" secondItem="ypg-bw-RMg" secondAttribute="top" constant="54" id="kT4-ZZ-i5n"/>
-                                                        <constraint firstItem="gd6-vA-cu7" firstAttribute="centerX" secondItem="ypg-bw-RMg" secondAttribute="centerX" id="sTu-F7-jvu"/>
+                                                        <constraint firstItem="gd6-vA-cu7" firstAttribute="centerX" secondItem="ypg-bw-RMg" secondAttribute="centerX" id="uiI-YU-6Za"/>
+                                                        <constraint firstItem="gd6-vA-cu7" firstAttribute="centerY" secondItem="ypg-bw-RMg" secondAttribute="centerY" id="wzl-pq-V3i"/>
                                                     </constraints>
                                                 </collectionViewCellContentView>
                                                 <connections>
@@ -91,6 +109,9 @@
                     </view>
                     <connections>
                         <outlet property="answerCollection" destination="x5J-rh-tpq" id="hw4-56-m6g"/>
+                        <outlet property="timerLabel" destination="De3-EW-iVX" id="mIm-ND-J5c"/>
+                        <outlet property="userRights" destination="PK8-iR-aYW" id="Hyv-PI-Vv7"/>
+                        <outlet property="userScore" destination="J3E-nG-n5l" id="zsn-tZ-LCM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>

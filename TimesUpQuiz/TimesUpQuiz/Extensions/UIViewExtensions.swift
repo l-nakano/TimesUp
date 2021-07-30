@@ -2,7 +2,7 @@ import UIKit
 
 extension UIView {
     
-    func blink(_ method: blinkMethod, finished: @escaping () -> Void = {}) {
+    func blink(_ method: AnswerMethod, finished: @escaping () -> Void = {}) {
         switch method {
         case .rightAnswer:
             self.alpha = 0.5
