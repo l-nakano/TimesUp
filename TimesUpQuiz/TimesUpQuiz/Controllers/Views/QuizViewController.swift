@@ -12,6 +12,7 @@ class QuizViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet weak var timerLabel: UILabel!
     
     var testeCount = 0 // Mudar para a variável aleatória
+    var testeFreeze = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,11 +73,11 @@ class QuizViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if GameManager.shared.questionsList[testeCount].answersList[indexPath.item].isAnswer {
-            collectionView.cellForItem(at: indexPath)!.blink(.rightAnswer, finished: {
+            collectionView.cellForItem(at: indexPath)!.blinkBackground(UIColor.green, finished: {
                 self.reloadData(.rightAnswer)
             })
         } else {
-            collectionView.cellForItem(at: indexPath)!.blink(.wrongAnswer, finished: {
+            collectionView.cellForItem(at: indexPath)!.blinkBackground(UIColor.red, finished: {
                 self.reloadData(.wrongAnswer)
             })
         }
@@ -88,25 +89,20 @@ class QuizViewController: UIViewController, UICollectionViewDataSource, UICollec
         self.userScore.text = String(GameManager.shared.userScore)
         self.answerCollection.reloadData()
         self.testeCount += 1
+        GameManager.shared.unfreezeTimerFreezed()
     }
     
     // Timer counter
     
     @objc func updateCounter() {
-        if(GameManager.shared.timeLeft > 0) {
-            timerLabel.text = String(GameManager.shared.timeLeft)
-            GameManager.shared.timeLeft -= 1
-            GameManager.shared.currentQuestionTime += 1
-        } else {
-            timerLabel.text = "Acabou o tempo!"
-        }
+        GameManager.shared.updateCounter(timerLabel)
     }
     
     // Gesture Recognizer
     
     @IBAction func handleSwipeLeft(_ gesture: UISwipeGestureRecognizer) {
         gesture.direction = .left
-        print("Pula a questão")
+        GameManager.shared.useSkipQuestionIfAvailable{ reloadData(.notAnswered) }
     }
     
     @IBAction func handleSwipeRight(_ gesture: UISwipeGestureRecognizer) {
@@ -115,8 +111,8 @@ class QuizViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     @IBAction func handleLongPress(_ gesture: UILongPressGestureRecognizer) {
-        gesture.minimumPressDuration = GameManager.shared.timeToFreezeTime
-        print("Congela tempo")
+        gesture.minimumPressDuration = GameManager.shared.timeToFreeze
+        GameManager.shared.useFreezeTimeIfAvailable()
     }
     
     //

@@ -1,3 +1,3 @@
 enum AnswerMethod {
-    case rightAnswer, wrongAnswer
+    case rightAnswer, wrongAnswer, notAnswered
 }
