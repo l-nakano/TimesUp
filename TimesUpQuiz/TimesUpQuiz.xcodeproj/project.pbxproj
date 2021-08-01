@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF389C1326B73E230069B4B5 /* CollectionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF389C1226B73E230069B4B5 /* CollectionExtensions.swift */; };
 		AF80AABA26B31980005479EC /* QuizData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF80AAB926B31980005479EC /* QuizData.swift */; };
 		AF80AABC26B31EB6005479EC /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF80AABB26B31EB6005479EC /* GameManager.swift */; };
 		AF80AAC126B32C95005479EC /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF80AAC026B32C95005479EC /* UIViewExtensions.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF389C1226B73E230069B4B5 /* CollectionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtensions.swift; sourceTree = "<group>"; };
 		AF80AAB926B31980005479EC /* QuizData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizData.swift; sourceTree = "<group>"; };
 		AF80AABB26B31EB6005479EC /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		AF80AAC026B32C95005479EC /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
@@ -51,6 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				AF80AAC026B32C95005479EC /* UIViewExtensions.swift */,
+				AF389C1226B73E230069B4B5 /* CollectionExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				AF80AAC126B32C95005479EC /* UIViewExtensions.swift in Sources */,
 				AF80AABC26B31EB6005479EC /* GameManager.swift in Sources */,
 				AFB0CBA926B1F6E500F57E89 /* QuestionCollectionReusableView.swift in Sources */,
+				AF389C1326B73E230069B4B5 /* CollectionExtensions.swift in Sources */,
 				AFB0CB9B26B1E1E800F57E89 /* QuizViewController.swift in Sources */,
 				AF80AABA26B31980005479EC /* QuizData.swift in Sources */,
 				AF80AAC426B32CFA005479EC /* Enums.swift in Sources */,

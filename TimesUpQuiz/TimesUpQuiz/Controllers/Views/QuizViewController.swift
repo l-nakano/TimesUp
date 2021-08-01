@@ -35,7 +35,15 @@ class QuizViewController: UIViewController, UICollectionViewDataSource, UICollec
 
         if let answerCell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseAnswerIdentifier, for: indexPath) as? AnswerCollectionViewCell {
             
-            answerCell.configure(text: GameManager.shared.questionsList[testeCount].answersList[indexPath.item].answerText)
+            let currentText = GameManager.shared.questionsList[testeCount].answersList[indexPath.item].answerText
+            if !GameManager.shared.halfChoicesInUse {
+                answerCell.configureNormalChoice(text: currentText)
+            } else if GameManager.shared.checkIfPicked(testeCount, indexPath.item) {
+                answerCell.configureEliminatedChoice(text: currentText)
+            } else {
+                answerCell.configureNormalChoice(text: currentText)
+            }
+            
             cell = answerCell
         }
 
@@ -89,7 +97,7 @@ class QuizViewController: UIViewController, UICollectionViewDataSource, UICollec
         self.userScore.text = String(GameManager.shared.userScore)
         self.answerCollection.reloadData()
         self.testeCount += 1
-        GameManager.shared.unfreezeTimerFreezed()
+        GameManager.shared.unselectUsedHelps()
     }
     
     // Timer counter
@@ -107,7 +115,7 @@ class QuizViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     @IBAction func handleSwipeRight(_ gesture: UISwipeGestureRecognizer) {
         gesture.direction = .right
-        print("Metade das alterativas")
+        GameManager.shared.useHalfChoicesIfAvailable(testeCount, answerCollection)
     }
     
     @IBAction func handleLongPress(_ gesture: UILongPressGestureRecognizer) {
