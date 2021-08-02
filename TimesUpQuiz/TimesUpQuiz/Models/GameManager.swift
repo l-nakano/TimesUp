@@ -58,7 +58,7 @@ class GameManager {
         timeToFreeze = 0.5,
         helpQuantity = 1
     
-    var timeLeft = 60,
+    var timeLeft = 30,
         currentQuestionTime = 0,
         userScore = 0,
         rightAnswersCounter = 0,

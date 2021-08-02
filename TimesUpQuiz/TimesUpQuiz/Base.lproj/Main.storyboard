@@ -45,6 +45,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Usf-vU-vyS"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="i98-Fg-Ib6" firstAttribute="height" secondItem="7yQ-ku-L7b" secondAttribute="height" multiplier="0.5" id="4b5-Ff-tIo"/>

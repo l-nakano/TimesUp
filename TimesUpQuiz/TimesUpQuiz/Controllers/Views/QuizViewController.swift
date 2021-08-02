@@ -176,7 +176,7 @@ class QuizViewController: UIViewController, UICollectionViewDataSource, UICollec
         switch method {
         case .rightAnswer:
             GameManager.shared.rightAnswersCounter += 1
-            GameManager.shared.timeLeft += 11
+            GameManager.shared.timeLeft += 6
             if GameManager.shared.currentQuestionTime < 5 {
                 GameManager.shared.userScore += 10
             } else {
