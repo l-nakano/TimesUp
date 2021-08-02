@@ -4,19 +4,24 @@ class AnswerCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var answerLabel: UILabel!
     
-    func configureNormalChoice(text: String) {
+    func configure(text: String, color: UIColor, disableCell: Bool = false) {
         answerLabel.text = text
         answerLabel.widthAnchor.constraint(equalToConstant: self.frame.size.width * 0.9).isActive = true
         answerLabel.adjustsFontSizeToFitWidth = true
-        self.isUserInteractionEnabled = true
-        self.backgroundColor = UIColor.blue
-    }
-    
-    func configureEliminatedChoice(text: String) {
-        answerLabel.text = text
-        answerLabel.widthAnchor.constraint(equalToConstant: self.frame.size.width * 0.9).isActive = true
-        answerLabel.adjustsFontSizeToFitWidth = true
-        self.isUserInteractionEnabled = false
-        self.backgroundColor = UIColor.gray
+        isUserInteractionEnabled = disableCell ? false : true
+        
+        backgroundColor = color
+        
+        layer.cornerRadius = 10.0
+        layer.borderWidth = 0.5
+        layer.borderColor = UIColor.black.cgColor
+        layer.masksToBounds = true
+        
+        layer.shadowColor = UIColor(named: "CardsShadowColor")?.cgColor
+        layer.shadowOffset = CGSize(width: 0.0, height: 4.0)
+        layer.shadowRadius = 1.0
+        layer.shadowOpacity = 1.0
+        layer.masksToBounds = false
+        layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: layer.cornerRadius).cgPath
     }
 }

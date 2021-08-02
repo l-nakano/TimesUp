@@ -7,8 +7,11 @@ class QuizViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     @IBOutlet weak var answerCollection: UICollectionView!
     @IBOutlet weak var userScore: UILabel!
-    @IBOutlet weak var userRights: UILabel!
+    @IBOutlet weak var rightAnswersCounter: UILabel!
+    @IBOutlet weak var userScoreImage: UIImageView!
+    @IBOutlet weak var rightAnswersCounterImage: UIImageView!
     
+    @IBOutlet weak var verticalStackView: UIStackView!
     @IBOutlet weak var timerLabel: UILabel!
     
     var testeCount = 0 // Mudar para a variável aleatória
@@ -17,14 +20,12 @@ class QuizViewController: UIViewController, UICollectionViewDataSource, UICollec
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         answerCollection.dataSource = self
         answerCollection.delegate = self
         
-        timerLabel.text = String(GameManager.shared.timeLeft)
+        initializeViewsAndConstraints()
+        verticalStackView.spacing = answerCollection.frame.width / 4
         
-        userRights.text = String(GameManager.shared.rightAnswersCounter)
-        userScore.text = String(GameManager.shared.userScore)
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
     }
 
@@ -37,11 +38,11 @@ class QuizViewController: UIViewController, UICollectionViewDataSource, UICollec
             
             let currentText = GameManager.shared.questionsList[testeCount].answersList[indexPath.item].answerText
             if !GameManager.shared.halfChoicesInUse {
-                answerCell.configureNormalChoice(text: currentText)
+                answerCell.configure(text: currentText, color: UIColor(named: "CardsColor")!)
             } else if checkIfPicked(indexPath.item) {
-                answerCell.configureEliminatedChoice(text: currentText)
+                answerCell.configure(text: currentText, color: UIColor(named: "CardsCoverColor")!, disableCell: true)
             } else {
-                answerCell.configureNormalChoice(text: currentText)
+                answerCell.configure(text: currentText, color: UIColor(named: "CardsColor")!)
             }
             
             cell = answerCell
@@ -55,9 +56,9 @@ class QuizViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         if let questionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: reuseQuestionIdentifier, for: indexPath) as? QuestionCollectionReusableView {
             
-            questionHeader.configure(text: GameManager.shared.questionsList[testeCount].question)
+            let headerSize = CGSize(width: collectionView.frame.width, height: collectionView.frame.width / 2.1)
+            questionHeader.configure(text: GameManager.shared.questionsList[testeCount].question, color: UIColor(named: "CardsColor")!, size: headerSize)
             header = questionHeader
-            header.frame.size = CGSize(width: collectionView.frame.width, height: collectionView.frame.width / 2.1)
         }
         
         return header
@@ -74,7 +75,18 @@ class QuizViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: collectionView.frame.width / 3, left: 0, bottom: 0, right: 0)
+        return UIEdgeInsets(top: collectionView.frame.width / 2, left: 0, bottom: 0, right: 0)
+    }
+    
+    func initializeViewsAndConstraints() {
+        let screenSize: CGRect = UIScreen.main.bounds
+        userScoreImage.widthAnchor.constraint(equalToConstant: screenSize.width * 0.075).isActive = true
+        rightAnswersCounterImage.widthAnchor.constraint(equalToConstant: screenSize.width * 0.07).isActive = true
+        
+        rightAnswersCounter.text = String(GameManager.shared.rightAnswersCounter)
+        userScore.text = String(GameManager.shared.userScore)
+        
+        timerLabel.text = String(GameManager.shared.timeLeft)
     }
     
     // Item selected
@@ -94,10 +106,10 @@ class QuizViewController: UIViewController, UICollectionViewDataSource, UICollec
     func reloadData(_ method: AnswerMethod) {
         updateUserScoreAndTime(method)
         unselectHelpsInUse()
-        self.userRights.text = String(GameManager.shared.rightAnswersCounter)
-        self.userScore.text = String(GameManager.shared.userScore)
-        self.answerCollection.reloadData()
-        self.testeCount += 1
+        rightAnswersCounter.text = String(GameManager.shared.rightAnswersCounter)
+        userScore.text = String(GameManager.shared.userScore)
+        answerCollection.reloadData()
+        testeCount += 1
     }
     
     // Timer counter
