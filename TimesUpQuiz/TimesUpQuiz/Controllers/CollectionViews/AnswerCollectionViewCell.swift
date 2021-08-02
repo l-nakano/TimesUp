@@ -5,6 +5,7 @@ class AnswerCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var answerLabel: UILabel!
     
     func configure(text: String, color: UIColor, disableCell: Bool = false) {
+        answerLabel.font = UIFont(name: "Anton-Regular", size: 20)
         answerLabel.text = text
         answerLabel.widthAnchor.constraint(equalToConstant: self.frame.size.width * 0.9).isActive = true
         answerLabel.adjustsFontSizeToFitWidth = true

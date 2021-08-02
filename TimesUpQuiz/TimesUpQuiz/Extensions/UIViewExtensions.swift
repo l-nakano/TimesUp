@@ -14,4 +14,13 @@ extension UIView {
             finished()
         })
     }
+    
+    func changeImageWithAnimation(_ image: UIImage) {
+        let imageView = self as! UIImageView
+        imageView.alpha = 0.1
+        UIView.animate(withDuration: 1, delay: 0.0, options: [.curveLinear], animations: {
+                        imageView.alpha = 1.0
+                        imageView.image = image
+        }, completion: nil)
+    }
 }

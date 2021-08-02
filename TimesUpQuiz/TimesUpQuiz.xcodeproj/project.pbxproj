@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		AF389C1326B73E230069B4B5 /* CollectionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF389C1226B73E230069B4B5 /* CollectionExtensions.swift */; };
+		AF4102CA26B82F5F000A8251 /* EndGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4102C926B82F5F000A8251 /* EndGameViewController.swift */; };
+		AF4102CC26B83132000A8251 /* Anton-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF4102CB26B83132000A8251 /* Anton-Regular.ttf */; };
+		AF4102CF26B83B8D000A8251 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4102CE26B83B8D000A8251 /* OnboardingViewController.swift */; };
 		AF80AABA26B31980005479EC /* QuizData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF80AAB926B31980005479EC /* QuizData.swift */; };
 		AF80AABC26B31EB6005479EC /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF80AABB26B31EB6005479EC /* GameManager.swift */; };
 		AF80AAC126B32C95005479EC /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF80AAC026B32C95005479EC /* UIViewExtensions.swift */; };
@@ -23,6 +26,9 @@
 
 /* Begin PBXFileReference section */
 		AF389C1226B73E230069B4B5 /* CollectionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtensions.swift; sourceTree = "<group>"; };
+		AF4102C926B82F5F000A8251 /* EndGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGameViewController.swift; sourceTree = "<group>"; };
+		AF4102CB26B83132000A8251 /* Anton-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Anton-Regular.ttf"; sourceTree = "<group>"; };
+		AF4102CE26B83B8D000A8251 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		AF80AAB926B31980005479EC /* QuizData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizData.swift; sourceTree = "<group>"; };
 		AF80AABB26B31EB6005479EC /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		AF80AAC026B32C95005479EC /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
@@ -49,6 +55,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF4102CD26B8314E000A8251 /* CustomFonts */ = {
+			isa = PBXGroup;
+			children = (
+				AF4102CB26B83132000A8251 /* Anton-Regular.ttf */,
+			);
+			path = CustomFonts;
+			sourceTree = "<group>";
+		};
 		AF80AABF26B32C87005479EC /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +99,7 @@
 		AFB0CB7D26B1CB1F00F57E89 /* TimesUpQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				AF4102CD26B8314E000A8251 /* CustomFonts */,
 				AF80AAC226B32CE1005479EC /* Enums */,
 				AF80AABF26B32C87005479EC /* Extensions */,
 				AFB0CB9326B1CED400F57E89 /* Models */,
@@ -128,6 +143,8 @@
 			isa = PBXGroup;
 			children = (
 				AFB0CB9A26B1E1E800F57E89 /* QuizViewController.swift */,
+				AF4102C926B82F5F000A8251 /* EndGameViewController.swift */,
+				AF4102CE26B83B8D000A8251 /* OnboardingViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -198,6 +215,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF4102CC26B83132000A8251 /* Anton-Regular.ttf in Resources */,
 				AFB0CB8A26B1CB1F00F57E89 /* Main.storyboard in Resources */,
 				AFB0CB8C26B1CB2000F57E89 /* Assets.xcassets in Resources */,
 				AFB0CB8326B1CB1F00F57E89 /* Actions.sks in Resources */,
@@ -213,12 +231,14 @@
 			files = (
 				AFB0CBA426B1F2CB00F57E89 /* AnswerCollectionViewCell.swift in Sources */,
 				AF80AAC126B32C95005479EC /* UIViewExtensions.swift in Sources */,
+				AF4102CA26B82F5F000A8251 /* EndGameViewController.swift in Sources */,
 				AF80AABC26B31EB6005479EC /* GameManager.swift in Sources */,
 				AFB0CBA926B1F6E500F57E89 /* QuestionCollectionReusableView.swift in Sources */,
 				AF389C1326B73E230069B4B5 /* CollectionExtensions.swift in Sources */,
 				AFB0CB9B26B1E1E800F57E89 /* QuizViewController.swift in Sources */,
 				AF80AABA26B31980005479EC /* QuizData.swift in Sources */,
 				AF80AAC426B32CFA005479EC /* Enums.swift in Sources */,
+				AF4102CF26B83B8D000A8251 /* OnboardingViewController.swift in Sources */,
 				AFB0CB7F26B1CB1F00F57E89 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

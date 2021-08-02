@@ -5,6 +5,7 @@ class QuestionCollectionReusableView: UICollectionReusableView {
     @IBOutlet weak var questionLabel: UILabel!
     
     func configure(text: String, color: UIColor, size: CGSize) {
+        questionLabel.font = UIFont(name: "Anton-Regular", size: 25)
         questionLabel.text = text
         
         backgroundColor = color
